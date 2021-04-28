@@ -24,9 +24,12 @@ RUN R -e "install.packages('xml2')"
 RUN R -e "install.packages(c('aws.s3'), repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('janitor')"
 RUN R -e "install.packages('tidyr')"
+RUN R -e "install.packages('googledrive')"
+RUN R -e "install.packages('readxl')"
 
 RUN mkdir -p /code
 
 COPY get_script.R /code
+COPY json.json /code
 
 CMD Rscript /code/get_script.R $script_name
