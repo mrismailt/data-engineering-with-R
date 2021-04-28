@@ -9,3 +9,7 @@
 - https://linux.die.net/man/1/rscript
 
 - http://datacornering.com/how-to-run-r-script-from-another-r-script-and-use-as-a-source/
+
+## Run
+
+`docker run --rm -dit -e script_name=example.R dockerimage`
