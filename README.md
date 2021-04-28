@@ -13,3 +13,17 @@
 ## Run
 
 `docker run --rm -dit -e script_name=example.R dockerimage`
+
+## What I did to get load files from Google drive to aws
+
+create service account. download json. get email for service account. grant permission to that email in google drive. then:
+
+googledrive::drive_deauth()
+googledrive::drive_auth(path = "/code/json.json")
+
+path <- paste(getwd(), "master_file.xlsx", sep = "/")
+
+googledrive::drive_download(
+file = googledrive::as_id("1gkN9ZVQf_7KHGzKdh7lEjSW9ulxEZ57x"),
+  path = path
+)
